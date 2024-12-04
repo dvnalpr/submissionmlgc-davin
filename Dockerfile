@@ -7,16 +7,13 @@ WORKDIR /app
 # Copy package.json dan package-lock.json ke dalam container
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install --production
+ENV PORT 3000
 
 # Copy seluruh kode aplikasi (termasuk src)
 COPY . .
 
-# Atur variabel lingkungan (opsional, jika Anda menggunakan file .env)
-ENV NODE_ENV=production
-
-ENV PORT=3000
+# Install dependencies
+RUN npm install
 
 # Expose port aplikasi
 EXPOSE 3000
