@@ -55,7 +55,7 @@ const InputError = require('../exceptions/InputError');
             if (response instanceof InputError) {
                 return h.response({
                     status: 'fail',
-                    message: `Terjadi kesalahan dalam melakukan prediksi.`,
+                    message: 'Terjadi kesalahan dalam melakukan prediksi',
                 }).code(400);
             }
 
